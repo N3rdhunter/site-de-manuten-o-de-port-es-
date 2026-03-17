@@ -1,0 +1,85 @@
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --slate: #64748b;
+    --accent: #ef4444;
+    --whatsapp: #25d366;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff; color: var(--dark); scroll-behavior: smooth; overflow-x: hidden; }
+
+/* Barra de Urgência */
+.top-bar { background: var(--accent); color: white; text-align: center; padding: 10px; font-size: 0.8rem; font-weight: 700; position: sticky; top: 0; z-index: 1100; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; padding: 15px 8%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); position: sticky; top: 38px; width: 100%; z-index: 1000; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+.logo { font-size: 1.6rem; font-weight: 800; }
+.logo span { color: var(--primary); }
+.nav-menu { display: flex; gap: 20px; align-items: center; }
+.nav-menu a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+.btn-nav { background: var(--dark); color: #fff !important; padding: 10px 20px; border-radius: 8px; }
+
+/* Hero */
+.hero { padding: 100px 8%; display: flex; align-items: center; gap: 50px; background: radial-gradient(circle at 10% 20%, #f8fafc 0%, #fff 100%); }
+.hero-content { flex: 1.2; }
+.hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin: 20px 0; font-weight: 800; }
+.hero-content h1 span { color: var(--primary); }
+.badge { background: #dbeafe; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+.hero-content p { font-size: 1.1rem; color: var(--slate); margin-bottom: 35px; max-width: 500px; line-height: 1.6; }
+
+.hero-btns { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+.btn-primary { background: var(--primary); color: #fff; height: 55px; padding: 0 30px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2); transition: 0.3s; }
+.btn-wa-hero { height: 55px; border: 2px solid var(--whatsapp); color: #128c7e; padding: 0 25px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px; background: #fff; transition: 0.3s; }
+.btn-wa-hero img { width: 22px; }
+
+/* Portão Animado */
+.gate-frame { width: 450px; height: 300px; border: 8px solid var(--dark); border-radius: 24px; position: relative; overflow: hidden; background: #cbd5e1; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.gate-door { width: 100%; height: 100%; background: repeating-linear-gradient(90deg, #1e293b, #1e293b 30px, #475569 32px); position: absolute; right: 0; animation: gateMove 5s infinite alternate ease-in-out; }
+@keyframes gateMove { 0%, 25% { width: 100%; } 75%, 100% { width: 15%; } }
+.scanner-line { position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--primary); box-shadow: 0 0 20px var(--primary); animation: scan 2.5s infinite linear; z-index: 10; }
+@keyframes scan { 0% { left: 0; } 100% { left: 100%; } }
+
+/* Benefícios */
+.benefits-gold { padding: 80px 8%; background: #0f172a; color: white; border-radius: 0 0 40px 40px; }
+.benefits-container { display: flex; justify-content: space-between; align-items: center; gap: 40px; flex-wrap: wrap; }
+.b-item { display: flex; gap: 20px; align-items: center; background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; margin-top: 20px; }
+.b-icon { font-size: 2rem; background: rgba(37, 99, 235, 0.1); padding: 15px; border-radius: 12px; }
+
+/* Promo Card */
+.promo-card { background: white; color: var(--dark); padding: 40px; border-radius: 30px; width: 360px; text-align: center; border: 3px solid var(--primary); position: relative; }
+.hot-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-weight: 800; font-size: 0.7rem; }
+.bonus-item { background: #f1f5f9; padding: 10px; border-radius: 10px; margin-bottom: 10px; font-weight: 700; color: #166534; }
+.btn-cta-promo { display: block; background: var(--primary); color: white; padding: 18px; border-radius: 15px; text-decoration: none; font-weight: 800; margin-top: 20px; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+/* Planos */
+.plans { padding: 80px 8%; text-align: center; }
+.plans-container { display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap; }
+.plan-card { background: #fff; padding: 40px 30px; border-radius: 25px; width: 320px; border: 1px solid #e2e8f0; transition: 0.4s; }
+.plan-card.featured { border: 2px solid var(--primary); transform: scale(1.05); box-shadow: 0 20px 40px rgba(0,0,0,0.05); position: relative; }
+.price { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+.btn-plan-featured { width: 100%; padding: 15px; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+/* Formulário de Contato */
+.contact-section { padding: 80px 8%; background: #f1f5f9; }
+.form-container { max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+#tech-form { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+.input-row { display: flex; gap: 15px; }
+input, select, textarea { width: 100%; padding: 14px; border: 2px solid #e2e8f0; border-radius: 10px; font-family: inherit; font-size: 1rem; }
+input:focus, select:focus, textarea:focus { border-color: var(--primary); outline: none; }
+.btn-submit { background: var(--dark); color: white; padding: 18px; border: none; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; }
+.btn-submit:hover { background: var(--primary); transform: translateY(-2px); }
+
+/* WhatsApp Fixo */
+.whatsapp-fixed { position: fixed; bottom: 25px; right: 25px; z-index: 9999; }
+.whatsapp-fixed img { width: 60px; height: 60px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); animation: shake 5s infinite; }
+@keyframes shake { 0%, 80%, 100% { transform: rotate(0); } 85%, 95% { transform: rotate(-10deg); } 90% { transform: rotate(10deg); } }
+
+.footer { background: var(--dark); color: white; padding: 40px; text-align: center; }
+
+@media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 140px; }
+    .input-row { flex-direction: column; }
+    .gate-frame { width: 100%; max-width: 350px; height: 220px; margin: 0 auto; }
+}
